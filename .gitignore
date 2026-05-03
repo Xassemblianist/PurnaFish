@@ -1,0 +1,11 @@
+PurnaFish-*
+*.o
+*.a
+*.so
+*.csv
+build/
+bin/
+.vscode/
+*.pyc
+__pycache__/
+
