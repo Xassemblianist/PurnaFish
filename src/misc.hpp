@@ -67,7 +67,9 @@ inline void* aligned_alloc_wrapper(size_t alignment, size_t size) {
     return _aligned_malloc(size, alignment);
 #else
     void* ptr = nullptr;
-    posix_memalign(&ptr, alignment, size);
+    if (posix_memalign(&ptr, alignment, size) != 0) {
+        return nullptr;
+    }
     return ptr;
 #endif
 }
